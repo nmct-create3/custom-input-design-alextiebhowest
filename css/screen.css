@@ -42,10 +42,15 @@
     --global-color-neutral-800: #4b4c60;
     --global-color-neutral-900: #35374d;
     --global-color-neutral-950: #20223a;
+    --global-color-blue: #3385FF;
 
     --global-page-color: var(--global-color-neutral-950);
     --global-page-backgroundColor: var(--global-color-neutral-050);
-
+    --global-card-color: #ffffff;
+    --global-card-font-color: var(--global-color-neutral-800);
+    --global-logo-fill-color: var(--global-color-neutral-950);
+    --global-logo-fill-color2: var(--global-color-primary-500);
+    --global-logo-fill-color3: var(--global-color-primary-700);
     /* border stuff */
     --global-borderRadius: 3px;
     --global-borderWidth: 1px;
@@ -87,14 +92,17 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --global-input-backgroundColor: var(--global-color-neutral-800);
+        --global-input-backgroundColor: var(--global-color-neutral-950);
         --global-input-color: var(--global-color-neutral-050);
         --global-page-color: var(--global-color-neutral-050);
         --global-page-backgroundColor: var(--global-color-neutral-950);
-
+        --global-card-color: var(--global-color-neutral-900);
+        --global-card-font-color: var(--global-color-neutral-300);
+        --global-logo-fill-color: #ffffff;
+        --global-logo-fill-color2: #ffffff;
+        --global-logo-fill-color3: #ffffff;
     }
 }
-
 /*---------------------------------------/*
  # GENERIC
 /*---------------------------------------*/
@@ -498,15 +506,15 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-    fill: var(--global-color-neutral-950);
+    fill: var(--global-logo-fill-color);
 }
 
 .c-logo__path--2 {
-    fill: var(--global-color-primary-500);
+    fill: var(--global-logo-fill-color2);
 }
 
 .c-logo__path--3 {
-    fill: var(--global-color-primary-700);
+    fill: var(--global-logo-fill-color3);
 }
 
 /*
@@ -516,7 +524,7 @@ input::placeholder {
 */
 
 .c-card {
-    background-color: White;
+    background-color: var(--global-card-color);
     margin-bottom: var(--global-whitespace);
     border-radius: var(--global-borderRadius);
     box-shadow: 0 0 0 var(--global-borderWidth) rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, .075);
@@ -621,7 +629,7 @@ input::placeholder {
     font-size: .875rem;
     padding-bottom: var(--global-whitespace-xs);
     line-height: calc(var(--global-baseline) * 2);
-    color: var(--global-color-neutral-800);
+    color: var(--global-card-font-color);
 }
 
 .c-label--option {
@@ -648,7 +656,7 @@ input::placeholder {
     transition: all var(--global-transition-timing-alpha);
 
     &:hover {
-        background-color: var(--global-color-primary-400);
+        background-color: var(--global-color-blue);
     }
 
     &:focus {
@@ -777,6 +785,11 @@ input::placeholder {
     bottom: .75rem;
 }
 
+.c-custom-toggle--inverted{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
